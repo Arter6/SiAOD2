@@ -1,0 +1,4 @@
+﻿  Funcs.cpp
+C:\Users\terem\source\repos\SiAOD-2-2-2\SiAOD-2-2-2\Funcs.cpp(160,27): warning C4244: инициализация: преобразование "std::streamoff" в "unsigned int", возможна потеря данных
+C:\Users\terem\source\repos\SiAOD-2-2-2\SiAOD-2-2-2\Funcs.cpp(178): warning C4715: search: значение возвращается не при всех путях выполнения
+  SiAOD-2-2-2.vcxproj -> C:\Users\terem\source\repos\SiAOD-2-2-2\Debug\SiAOD-2-2-2.exe

@@ -1,0 +1,5 @@
+﻿  Funcs.cpp
+C:\Users\terem\source\repos\SiAOD-2-2-1\SiAOD-2-2-1\Funcs.cpp(78): warning C4715: append: значение возвращается не при всех путях выполнения
+C:\Users\terem\source\repos\SiAOD-2-2-1\SiAOD-2-2-1\Funcs.cpp(142): warning C4715: count: значение возвращается не при всех путях выполнения
+C:\Users\terem\source\repos\SiAOD-2-2-1\SiAOD-2-2-1\Funcs.cpp(226): warning C4715: merge: значение возвращается не при всех путях выполнения
+  SiAOD-2-2-1.vcxproj -> C:\Users\terem\source\repos\SiAOD-2-2-1\Debug\SiAOD-2-2-1.exe

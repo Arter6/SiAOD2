@@ -1,0 +1,6 @@
+﻿  graph.cpp
+C:\Users\terem\source\repos\SiAOD2-6-1\SiAOD2-6-1\graph.cpp(9,18): warning C4018: >: несоответствие типов со знаком и без знака
+C:\Users\terem\source\repos\SiAOD2-6-1\SiAOD2-6-1\graph.cpp(24,20): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\terem\source\repos\SiAOD2-6-1\SiAOD2-6-1\graph.cpp(26,21): warning C4018: <: несоответствие типов со знаком и без знака
+C:\Users\terem\source\repos\SiAOD2-6-1\SiAOD2-6-1\graph.cpp(47,21): warning C4018: <: несоответствие типов со знаком и без знака
+  SiAOD2-6-1.vcxproj -> C:\Users\terem\source\repos\SiAOD2-6-1\Debug\SiAOD2-6-1.exe
