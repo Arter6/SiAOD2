@@ -32,17 +32,46 @@ string* toRLE(string str,int& n)
 
 int main()
 {
-	int sizeBefore = 0, n=0,sizeAfter=0;
-	string str = "aaaa3444   rrr";
-	cout << str.length()*sizeof(str[0]);
-	cout << endl << endl;
+	setlocale(0, "");
+	string str;
+	int sizeBefore, n=0,sizeAfter=0;
+	int choose;
+	cout << "1.Повторяющиеся символы\n";
+	cout << "2.Неповторяющиеся символы\n";
+	cout << "Ввод: ";
+	cin >> choose;
+	switch (choose)
+	{
+	case 1:
+	{
+		str = "aaaaaaaaa54532sddsadgggggggggggggg";
+		cout << "Изначальная строка: " << str<<endl;
+		break;
+	}
+	case 2:
+	{
+		str = "asdfghjkuyrqxvbn";
+		cout << "Изначальная строка: " << str << endl;
+		break;
+	}
+	}
+	sizeBefore = str.length() * sizeof(str[0]);
+	cout << "Байт до кодирования: "<< sizeBefore<<endl;
 	string* str_array = toRLE(str,n);
+	cout << "Закодированная строка: ";
+	for (int i = 0; i < n; i++)
+	{
+		cout << str_array[i] << " ";
+	}
+	cout << endl;
 	for (int i = 0; i < n; i++)
 	{
 		for (int j = 0; j < str_array[i].length(); j++)
 		{
-			cout << sizeof(str_array[i][j])<<" ";
+			sizeAfter+=sizeof(str_array[i][j]);
 		}
 	}
+	cout <<"Байт после кодирования: "<< sizeAfter<<endl;
+	cout << "Коэффициент: " << (double)sizeBefore / sizeAfter;
 	delete[] str_array;
 }

@@ -97,15 +97,25 @@ string decodeLZ77(vector<Node> array)
 
 int main()
 {
+	setlocale(0, "");
+	int sizeBefore, sizeAfter=0;
 	string str = "abacabacabadaca";
-	//str = "hellolololololowww";
 	str = "010110110110100010001";
+	str = "hellolololololowwwlolololololololololo";
+	sizeBefore = str.length();
+	cout << "Байт до кодирования: " << sizeBefore<<endl;
 	vector<Node> array;
 	array = encodeLZ77(str);
+	cout << "Закодированная строка (каждый узел с новой строки):\n";
 	for (int i = 0; i < array.size(); i++)
 	{
-		cout << "<" + to_string(array[i].offset) + "," + to_string(array[i].length) + "," + array[i].next + ">  " + to_string(sizeof(array[i]))<<endl;
+		int temp = sizeof(int) + sizeof(int) + sizeof(char); // Числа хранятся в 4 байтах, если уменьшить до 1 (в следующей строке), ограничивая окно, то лучше будет
+		//temp = 1 + 1 + sizeof(char);
+		sizeAfter += temp;
+		cout << "<" + to_string(array[i].offset) + "," + to_string(array[i].length) + "," + array[i].next + ">  " + to_string(temp) << " Байт" << endl;
 	}
+	cout << "Байт после кодирования: " << sizeAfter << endl;
 	string res = decodeLZ77(array);
-	cout << res;
+	cout << "Раскодированная строка: "<<res<<endl;
+	cout << "Коэффициент: " << (double)sizeBefore / sizeAfter;
 }

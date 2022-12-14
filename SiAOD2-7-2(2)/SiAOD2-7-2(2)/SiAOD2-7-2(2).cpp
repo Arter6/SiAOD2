@@ -42,7 +42,7 @@ vector<Node> encodeLZ78(string s)
 		{
 			k = temp;
 			temp = findMatch(book, s.substr(pos, ++i));
-		} while (temp != -1);
+		} while (temp != -1 and pos+i<s.length());
 		next = pos + i - 1 < s.length() ? s.at(pos + i - 1) : '\0';
 		if (k == -1)
 		{
@@ -73,14 +73,24 @@ string decodeLZ78(vector<Node> array)
 
 int main()
 {
+	setlocale(0, "");
+	int sizeBefore, sizeAfter = 0;
 	string s="abacababacabc";
 	s = "sarsalsarsanlasanl";
+	s = "sarsalsarsanlasanlsarsalsarsanlasanlsarsalsarsanlasanlsarsalsarsanlasanl"; // на этой лучше коэффициент
+	sizeBefore = s.length();
+	cout << "Байт до кодирования: " << sizeBefore << endl;
 	string res;
 	vector<Node> array = encodeLZ78(s);
+	cout << "Закодированная строка (каждый узел с новой строки):\n";
 	for (int i = 0; i < array.size(); i++)
 	{
-		cout << "<" + to_string(array[i].pos) + "," + array[i].next + ">\n";
+		int temp = sizeof(int) + sizeof(char); //Если уменьшить возможный размер словаря до 256 (1 байт), то лучше будет
+		temp = 1 + sizeof(char);
+		sizeAfter += temp;
+		cout << "<" + to_string(array[i].pos) + "," + array[i].next + "> " + to_string(temp) + " Байт\n";
 	}
 	res = decodeLZ78(array);
-	cout << res;
+	cout << "Раскодированная строка: " << res << endl;
+	cout << "Коэффициент: " << (double)sizeBefore / sizeAfter << endl;
 }
